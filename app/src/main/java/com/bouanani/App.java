@@ -7,13 +7,16 @@ import com.bouanani.classes.Cat;
 import java.lang.reflect.*;
 public class App {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         Cat myCat = new Cat("cat1" , 12);
         Field[] catField = myCat.getClass().getDeclaredFields();
 
         for(Field f : catField){
-            System.out.println(f.getName());
+            if(f.getName().equals("name")){
+                f.setAccessible(true);
+                f.set(myCat,"catty");
+            }
         }
     }
 }
