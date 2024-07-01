@@ -21,9 +21,9 @@ public class App {
 
         Method[] catMethods = myCat.getClass().getDeclaredMethods();
         for(Method m : catMethods){
-          if(m.getName().equals("getName")){
+          if(m.getName().equals("thisIsPrivateStaticMethod")){
               m.setAccessible(true);
-              m.invoke(myCat);
+              m.invoke(null);
           }
             //System.out.println(m.getName());
         }

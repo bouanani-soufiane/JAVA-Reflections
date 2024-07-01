@@ -16,7 +16,7 @@ public class Cat {
     public void setAge(int age) {
         this.age = age;
     }
-    public void meow(){
+    private void meow(){
         System.out.println("meow");
     }
     private void heyThisisPrivateMethod(){
