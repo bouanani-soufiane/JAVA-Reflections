@@ -4,12 +4,16 @@
 package com.bouanani;
 
 import com.bouanani.classes.Cat;
-
+import java.lang.reflect.*;
 public class App {
 
     public static void main(String[] args) {
 
         Cat myCat = new Cat("cat1" , 12);
+        Field[] catField = myCat.getClass().getDeclaredFields();
 
+        for(Field f : catField){
+            System.out.println(f.getName());
+        }
     }
 }
