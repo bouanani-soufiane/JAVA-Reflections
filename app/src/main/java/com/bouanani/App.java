@@ -21,7 +21,11 @@ public class App {
 
         Method[] catMethods = myCat.getClass().getDeclaredMethods();
         for(Method m : catMethods){
-            System.out.println(m.getName());
+          if(m.getName().equals("meow")){
+              m.setAccessible(true);
+              m.invoke(myCat);
+          }
+            //System.out.println(m.getName());
         }
         //System.out.println(myCat.getName());
     }
