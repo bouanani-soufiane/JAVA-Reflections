@@ -18,5 +18,11 @@ public class App {
                 f.set(myCat,"catty");
             }
         }
+
+        Method[] catMethods = myCat.getClass().getDeclaredMethods();
+        for(Method m : catMethods){
+            System.out.println(m.getName());
+        }
+        //System.out.println(myCat.getName());
     }
 }
