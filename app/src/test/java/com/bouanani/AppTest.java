@@ -3,12 +3,31 @@
  */
 package com.bouanani;
 
+import com.bouanani.classes.Person;
 import org.junit.Test;
+
+import java.lang.reflect.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 public class AppTest {
-    @Test public void appHasAGreeting() {
-        App classUnderTest = new App();
-        assertNotNull("app should have a greeting", classUnderTest.getGreeting());
+    @Test
+    public void givenObject_whenGetsFieldNamesAtRuntime_thenCorrect() {
+        Object person = new Person();
+        Field[] fields = person.getClass().getDeclaredFields();
+
+        List<String> actualFieldNames = getFieldNames(fields);
+
+        assertTrue(Arrays.asList("name", "age")
+                .containsAll(actualFieldNames));
+    }
+    private static List<String> getFieldNames(Field[] fields) {
+        List<String> fieldNames = new ArrayList<>();
+        for (Field field : fields)
+            fieldNames.add(field.getName());
+        return fieldNames;
     }
 }
