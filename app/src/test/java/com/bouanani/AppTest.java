@@ -19,10 +19,8 @@ public class AppTest {
         Object person = new Person();
         Field[] fields = person.getClass().getDeclaredFields();
 
-        List<String> actualFieldNames = getFieldNames(fields);
-
         assertTrue(Arrays.asList("name", "age")
-                .containsAll(actualFieldNames));
+                .containsAll(getFieldNames(fields)));
     }
     private static List<String> getFieldNames(Field[] fields) {
         List<String> fieldNames = new ArrayList<>();
