@@ -3,6 +3,7 @@
  */
 package com.bouanani;
 
+import com.bouanani.classes.Goat;
 import com.bouanani.classes.Person;
 import org.junit.Test;
 
@@ -27,5 +28,14 @@ public class AppTest {
         for (Field field : fields)
             fieldNames.add(field.getName());
         return fieldNames;
+    }
+    @Test
+    public void givenObject_whenGetsClassName_thenCorrect() {
+        Object goat = new Goat("goat");
+        Class<?> clazz = goat.getClass();
+
+        assertEquals("Goat", clazz.getSimpleName());
+        assertEquals("com.bouanani.classes.Goat", clazz.getName());
+        assertEquals("com.bouanani.classes.Goat", clazz.getCanonicalName());
     }
 }
