@@ -4,10 +4,16 @@
 package com.bouanani;
 
 import com.bouanani.classes.Cat;
+import com.bouanani.classes.Goat;
+
 import java.lang.reflect.*;
 public class App {
 
     public static void main(String[] args) throws Exception {
+
+//        Object goat = new Goat("goat");
+//        Class<?> clazz = goat.getClass();
+//        System.out.println("here : "+clazz);
 
         Cat myCat = new Cat("cat1" , 12);
         Field[] catField = myCat.getClass().getDeclaredFields();
@@ -21,12 +27,13 @@ public class App {
 
         Method[] catMethods = myCat.getClass().getDeclaredMethods();
         for(Method m : catMethods){
-          if(m.getName().equals("thisIsPrivateStaticMethod")){
-              m.setAccessible(true);
-              m.invoke(null);
-          }
+            if(m.getName().equals("thisIsPrivateStaticMethod")){
+                m.setAccessible(true);
+                m.invoke(null);
+            }
             //System.out.println(m.getName());
         }
         //System.out.println(myCat.getName());
+
     }
 }
