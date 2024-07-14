@@ -38,4 +38,12 @@ public class AppTest {
         assertEquals("com.bouanani.classes.Goat", clazz.getName());
         assertEquals("com.bouanani.classes.Goat", clazz.getCanonicalName());
     }
+    @Test
+    public void givenClassName_whenCreatesObject_thenCorrect() throws ClassNotFoundException {
+        Class<?> clazz = Class.forName("com.bouanani.classes.Goat");
+
+        assertEquals("Goat", clazz.getSimpleName());
+        assertEquals("com.bouanani.classes.Goat", clazz.getName());
+        assertEquals("com.bouanani.classes.Goat", clazz.getCanonicalName());
+    }
 }
