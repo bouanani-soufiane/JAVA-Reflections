@@ -93,4 +93,14 @@ public class AppTest {
         assertEquals("Locomotion", goatInterfaces[0].getSimpleName());
         assertEquals("Eating", animalInterfaces[0].getSimpleName());
     }
+
+    @Test
+    public void givenClass_whenGetsConstructor_thenCorrect() throws ClassNotFoundException {
+        Class<?> goatClass = Class.forName("com.bouanani.classes.Goat");
+
+        Constructor<?>[] constructors = goatClass.getConstructors();
+
+        assertEquals(1, constructors.length);
+        assertEquals("com.bouanani.classes.Goat", constructors[0].getName());
+    }
 }
