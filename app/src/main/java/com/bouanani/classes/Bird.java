@@ -33,4 +33,8 @@ public class Bird extends Animal {
     public String eats () {
         return "";
     }
+
+    public String getName () {
+        return "";
+    }
 }
