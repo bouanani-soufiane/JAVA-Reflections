@@ -130,15 +130,17 @@ public class AppTest {
         Constructor<?> cons2 = birdClass.getConstructor(String.class);
         Constructor<?> cons3 = birdClass.getConstructor(String.class, boolean.class);
     }
+
+
     @Test
     public void givenClass_whenInstantiatesObjectsAtRuntime_thenCorrect() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
         Class<?> birdClass = Class.forName("com.bouanani.classes.Bird");
         Constructor<?> cons1 = birdClass.getConstructor();
         Constructor<?> cons2 = birdClass.getConstructor(String.class);
-        Constructor<?> cons3 = birdClass.getConstructor(String.class, boolean.class);
+        Constructor<?> cons3 = birdClass.getConstructor(String.class,
+                boolean.class);
 
         Bird bird1 = (Bird) cons1.newInstance();
-
 
         assertEquals("bird", bird1.getName());
 

@@ -4,7 +4,7 @@ import com.bouanani.interfaces.Locomotion;
 
 public class Goat extends Animal implements Locomotion {
     public Goat ( String goat ) {
-        super();
+        super("bird");
     }
 
     @Override

@@ -4,19 +4,19 @@ public class Bird extends Animal {
     private boolean walks;
 
     public Bird() {
-        super();
+        super("bird");
     }
 
-    public Bird ( String name, boolean walks ) {
-        super();
-
+    public Bird(String name, boolean walks) {
+        super(name);
+        setWalks(walks);
     }
 
     private void setWalks ( boolean walks ) {
     }
 
     public Bird(String name) {
-        super();
+        super(name);
     }
 
     public boolean walks() {
@@ -34,7 +34,8 @@ public class Bird extends Animal {
         return "";
     }
 
+
     public String getName () {
-        return "";
+        return "bird";
     }
 }

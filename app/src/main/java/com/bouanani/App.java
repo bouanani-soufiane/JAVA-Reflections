@@ -3,6 +3,7 @@
  */
 package com.bouanani;
 
+import com.bouanani.classes.Bird;
 import com.bouanani.classes.Cat;
 import com.bouanani.classes.Goat;
 
@@ -22,11 +23,18 @@ public class App {
 //        int goatMods = goatClass.getModifiers();
 //        int animalMods = animalClass.getModifiers();
 
-        Class<?> goatClass = goat.getClass();
-        Package pkg = goatClass.getPackage();
-        Class<?> goatSuperClass = goatClass.getSuperclass();
+//        Class<?> goatClass = goat.getClass();
+//        Package pkg = goatClass.getPackage();
+//        Class<?> goatSuperClass = goatClass.getSuperclass();
 
-        System.out.println("here : "+goatSuperClass.getSimpleName());
+//        System.out.println("here : "+goatSuperClass.getSimpleName());
+
+        Class<?> birdClass = Class.forName("com.bouanani.classes.Bird");
+        Constructor<?> cons1 = birdClass.getConstructor();
+        Bird bird1 = (Bird) cons1.newInstance();
+
+        System.out.println("here : " + bird1.getName());
+
 
         Cat myCat = new Cat("cat1" , 12);
         Field[] catField = myCat.getClass().getDeclaredFields();
