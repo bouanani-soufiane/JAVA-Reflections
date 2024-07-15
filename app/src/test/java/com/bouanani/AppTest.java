@@ -59,4 +59,13 @@ public class AppTest {
         assertTrue(Modifier.isAbstract(animalMods));
         assertTrue(Modifier.isPublic(animalMods));
     }
+
+    @Test
+    public void givenClass_whenGetsPackageInfo_thenCorrect() {
+        Goat goat = new Goat("goat");
+        Class<?> goatClass = goat.getClass();
+        Package pkg = goatClass.getPackage();
+
+        assertEquals("com.bouanani.classes", pkg.getName());
+    }
 }
