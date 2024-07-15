@@ -46,4 +46,17 @@ public class AppTest {
         assertEquals("com.bouanani.classes.Goat", clazz.getName());
         assertEquals("com.bouanani.classes.Goat", clazz.getCanonicalName());
     }
+
+    @Test
+    public void givenClass_whenRecognisesModifiers_thenCorrect() throws ClassNotFoundException {
+        Class<?> goatClass = Class.forName("com.bouanani.classes.Goat");
+        Class<?> animalClass = Class.forName("com.bouanani.classes.Animal");
+
+        int goatMods = goatClass.getModifiers();
+        int animalMods = animalClass.getModifiers();
+
+        assertTrue(Modifier.isPublic(goatMods));
+        assertTrue(Modifier.isAbstract(animalMods));
+        assertTrue(Modifier.isPublic(animalMods));
+    }
 }

@@ -15,6 +15,15 @@ public class App {
 //        Class<?> clazz = goat.getClass();
 //        System.out.println("here : "+clazz);
 
+
+        Class<?> goatClass = Class.forName("com.bouanani.classes.Goat");
+        Class<?> animalClass = Class.forName("com.bouanani.classes.Animal");
+
+        int goatMods = goatClass.getModifiers();
+        int animalMods = animalClass.getModifiers();
+
+        System.out.println("here : "+animalMods);
+
         Cat myCat = new Cat("cat1" , 12);
         Field[] catField = myCat.getClass().getDeclaredFields();
 
@@ -29,7 +38,7 @@ public class App {
         for(Method m : catMethods){
             if(m.getName().equals("thisIsPrivateStaticMethod")){
                 m.setAccessible(true);
-                m.invoke(null);
+                //m.invoke(null);
             }
             //System.out.println(m.getName());
         }
