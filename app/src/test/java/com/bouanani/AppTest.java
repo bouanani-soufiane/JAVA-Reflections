@@ -68,4 +68,29 @@ public class AppTest {
 
         assertEquals("com.bouanani.classes", pkg.getName());
     }
+    @Test
+    public void givenClass_whenGetsSuperClass_thenCorrect() {
+        Goat goat = new Goat("goat");
+        String str = "any string";
+
+        Class<?> goatClass = goat.getClass();
+        Class<?> goatSuperClass = goatClass.getSuperclass();
+
+        assertEquals("Animal", goatSuperClass.getSimpleName());
+        assertEquals("Object", str.getClass().getSuperclass().getSimpleName());
+    }
+
+    @Test
+    public void givenClass_whenGetsImplementedInterfaces_thenCorrect() throws ClassNotFoundException {
+        Class<?> goatClass = Class.forName("com.bouanani.classes.Goat");
+        Class<?> animalClass = Class.forName("com.bouanani.classes.Animal");
+
+        Class<?>[] goatInterfaces = goatClass.getInterfaces();
+        Class<?>[] animalInterfaces = animalClass.getInterfaces();
+
+        assertEquals(1, goatInterfaces.length);
+        assertEquals(1, animalInterfaces.length);
+        assertEquals("Locomotion", goatInterfaces[0].getSimpleName());
+        assertEquals("Eating", animalInterfaces[0].getSimpleName());
+    }
 }

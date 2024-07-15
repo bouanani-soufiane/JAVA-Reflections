@@ -24,7 +24,9 @@ public class App {
 
         Class<?> goatClass = goat.getClass();
         Package pkg = goatClass.getPackage();
-        System.out.println("here : "+pkg);
+        Class<?> goatSuperClass = goatClass.getSuperclass();
+
+        System.out.println("here : "+goatSuperClass.getSimpleName());
 
         Cat myCat = new Cat("cat1" , 12);
         Field[] catField = myCat.getClass().getDeclaredFields();
