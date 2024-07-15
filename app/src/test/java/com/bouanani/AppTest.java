@@ -114,4 +114,11 @@ public class AppTest {
         assertEquals(2, actualFields.size());
         assertTrue(actualFields.containsAll(Arrays.asList("name", "CATEGORY")));
     }
+    @Test
+    public void givenClass_whenGetsAllConstructors_thenCorrect()  throws ClassNotFoundException{
+        Class<?> birdClass = Class.forName("com.bouanani.classes.Bird");
+        Constructor<?>[] constructors = birdClass.getConstructors();
+
+        assertEquals(3, constructors.length);
+    }
 }

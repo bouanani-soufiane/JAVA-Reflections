@@ -6,6 +6,9 @@ public abstract class Animal implements Eating {
     public static String CATEGORY = "DOMESTIC";
     private String name;
 
+    public Animal ( ) {
+    }
+
     protected abstract String getSound ();
 
 }
