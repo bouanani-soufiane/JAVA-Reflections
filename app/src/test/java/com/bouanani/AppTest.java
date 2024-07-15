@@ -103,4 +103,15 @@ public class AppTest {
         assertEquals(1, constructors.length);
         assertEquals("com.bouanani.classes.Goat", constructors[0].getName());
     }
+
+    @Test
+    public void givenClass_whenGetsFields_thenCorrect() throws ClassNotFoundException{
+        Class<?> animalClass = Class.forName("com.bouanani.classes.Animal");
+        Field[] fields = animalClass.getDeclaredFields();
+
+        List<String> actualFields = getFieldNames(fields);
+
+        assertEquals(2, actualFields.size());
+        assertTrue(actualFields.containsAll(Arrays.asList("name", "CATEGORY")));
+    }
 }
