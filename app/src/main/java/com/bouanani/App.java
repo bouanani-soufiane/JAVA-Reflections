@@ -11,18 +11,20 @@ public class App {
 
     public static void main(String[] args) throws Exception {
 
-//        Object goat = new Goat("goat");
+        Object goat = new Goat("goat");
 //        Class<?> clazz = goat.getClass();
 //        System.out.println("here : "+clazz);
 
 
-        Class<?> goatClass = Class.forName("com.bouanani.classes.Goat");
-        Class<?> animalClass = Class.forName("com.bouanani.classes.Animal");
+//        Class<?> goatClass = Class.forName("com.bouanani.classes.Goat");
+//        Class<?> animalClass = Class.forName("com.bouanani.classes.Animal");
+//
+//        int goatMods = goatClass.getModifiers();
+//        int animalMods = animalClass.getModifiers();
 
-        int goatMods = goatClass.getModifiers();
-        int animalMods = animalClass.getModifiers();
-
-        System.out.println("here : "+animalMods);
+        Class<?> goatClass = goat.getClass();
+        Package pkg = goatClass.getPackage();
+        System.out.println("here : "+pkg);
 
         Cat myCat = new Cat("cat1" , 12);
         Field[] catField = myCat.getClass().getDeclaredFields();
