@@ -121,4 +121,12 @@ public class AppTest {
 
         assertEquals(3, constructors.length);
     }
+    @Test
+    public void givenClass_whenGetsEachConstructorByParamTypes_thenCorrect() throws ClassNotFoundException, NoSuchMethodException {
+        Class<?> birdClass = Class.forName("com.bouanani.classes.Bird");
+
+        Constructor<?> cons1 = birdClass.getConstructor();
+        Constructor<?> cons2 = birdClass.getConstructor(String.class);
+        Constructor<?> cons3 = birdClass.getConstructor(String.class, boolean.class);
+    }
 }
